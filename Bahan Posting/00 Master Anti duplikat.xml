@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Data>
     <Baris>
-        <Judul>Pom Mini</Judul>
-        <Harga_Normal>976</Harga_Normal>
-        <Harga_Diskon>976</Harga_Diskon>
+        <Judul>Pertamini Digital, Pertamini Digital Murah, Pertamini Baru</Judul>
+        <Harga_Normal>99</Harga_Normal>
+        <Harga_Diskon>99</Harga_Diskon>
         <Kategori>Peralatan</Kategori>
         <Kondisi>Baru</Kondisi>
         <Deskripsi>
@@ -38,7 +38,7 @@
         </Deskripsi>
         <Label>ed</Label>
         <Kota_Target>Tapaan, Bugul Kidul</Kota_Target>
-        <Gambar1>C:\ROBOT FB UNDERGROUND 2024\Data\STOK FOTO\2025\1\5.1.jpg</Gambar1>
+        <Gambar1>C:\ROBOT FB UNDERGROUND 2024\Data\Bahan Posting\3.4.jpg</Gambar1>
         <Gambar2 />
         <Gambar3 />
         <Gambar4 />
