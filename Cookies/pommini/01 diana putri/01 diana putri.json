@@ -1,0 +1,93 @@
+[
+  {
+    "domain": ".facebook.com",
+    "expirationDate": null,
+    "hostOnly": false,
+    "httpOnly": false,
+    "name": "presence",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": true,
+    "storeId": null,
+    "value": "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1740962343440%2C%22v%22%3A1%7D"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1748763536.0,
+    "hostOnly": false,
+    "httpOnly": true,
+    "name": "fr",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "0exm46go3ZAqFquwq.AWXKZcdA3v7KVj6qWeaWO0NQWPuo1GbuJPvLHg.BnxPoP..AAA.0.0.BnxPoh.AWXwJtvR_jM"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1772523536.0,
+    "hostOnly": false,
+    "httpOnly": true,
+    "name": "xs",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "11%3AAyES3FjkD92Tcg%3A2%3A1740962333%3A-1%3A13329"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1772523536.0,
+    "hostOnly": false,
+    "httpOnly": false,
+    "name": "c_user",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "100090375887988"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1741592340.0,
+    "hostOnly": false,
+    "httpOnly": false,
+    "name": "wd",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "1034x620"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1775547536.0,
+    "hostOnly": false,
+    "httpOnly": true,
+    "name": "sb",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "D_rEZ4zt0Ioo8dnDJf-AqdHx"
+  },
+  {
+    "domain": ".facebook.com",
+    "expirationDate": 1775547518.0,
+    "hostOnly": false,
+    "httpOnly": true,
+    "name": "datr",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": false,
+    "storeId": null,
+    "value": "D_rEZzh3hNTd_dSKVZ8t5JU8"
+  }
+]
