@@ -10,11 +10,11 @@
     "secure": true,
     "session": true,
     "storeId": null,
-    "value": "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1740963485376%2C%22v%22%3A1%7D"
+    "value": "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1741050387973%2C%22v%22%3A1%7D"
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1748764682.0,
+    "expirationDate": 1748851584.0,
     "hostOnly": false,
     "httpOnly": true,
     "name": "fr",
@@ -23,11 +23,11 @@
     "secure": true,
     "session": false,
     "storeId": null,
-    "value": "08t0y6xTEQm9x1eJt.AWUXROM5bbyxOHul_6ptl1BnlFhD5GqHCHpVXw.BnxP6K..AAA.0.0.BnxP6a.AWVwEwfqydk"
+    "value": "00UIw3Z9czx75RGIi.AWXUdM_nEajzno5x6sgruJsn0PDg584aPtVaHA.BnxlIB..AAA.0.0.BnxlIR.AWWpPHGds70"
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1772524681.0,
+    "expirationDate": 1772611584.0,
     "hostOnly": false,
     "httpOnly": true,
     "name": "xs",
@@ -36,11 +36,11 @@
     "secure": true,
     "session": false,
     "storeId": null,
-    "value": "35%3ALcPYZ5PLiT1RfA%3A2%3A1740963480%3A-1%3A436"
+    "value": "46%3AkRfp-4G7dZVEeQ%3A2%3A1741050383%3A-1%3A436"
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1772524681.0,
+    "expirationDate": 1772611584.0,
     "hostOnly": false,
     "httpOnly": false,
     "name": "c_user",
@@ -53,7 +53,7 @@
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1741593484.0,
+    "expirationDate": 1741680387.0,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wd",
@@ -66,7 +66,7 @@
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1775548681.0,
+    "expirationDate": 1775635584.0,
     "hostOnly": false,
     "httpOnly": true,
     "name": "sb",
@@ -75,11 +75,11 @@
     "secure": true,
     "session": false,
     "storeId": null,
-    "value": "iv7EZ4bMFGKNoGm1hExFt0Pz"
+    "value": "AVLGZz738cc51PJZkQ-Z9X1e"
   },
   {
     "domain": ".facebook.com",
-    "expirationDate": 1775548665.0,
+    "expirationDate": 1775635569.0,
     "hostOnly": false,
     "httpOnly": true,
     "name": "datr",
@@ -88,6 +88,6 @@
     "secure": true,
     "session": false,
     "storeId": null,
-    "value": "iv7EZ2dRR_wpCu9n3dNuvMzV"
+    "value": "AVLGZ8toxSwZpQ-BJ7xp3yuM"
   }
 ]
