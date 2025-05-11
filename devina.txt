@@ -1,1 +1,24 @@
-sb=U_D0ZpBTeo2aI5ghMQBGyilQ; ps_l=1; ps_n=1; wd=1366x641; datr=HkwgaI7b04-Cl94IICu3rUDv; c_user=61566114430583; fr=1vjYRxdJsiKHDoRd1.AWeZ-4iSOBBz5Z2vcuuIn9VWpgbL3sbkL7zVWVNBm5f0fe52lq4.BoHvuq..AAA.0.0.BoIEwp.AWdTgXDVp9-7XZgg7ACvB9SEpBc; xs=22%3AHWrJjIyzrIkfeQ%3A2%3A1746947114%3A-1%3A11426; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1746947123661%2C%22v%22%3A1%7D; useragent=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzNi4wLjAuMCBTYWZhcmkvNTM3LjM2; 
+Bombana
+Buton, Sulawesi Tenggara, Indonesia
+Kolaka, Sulawesi Tenggara, Indonesia
+Konawe, Sulawesi Tenggara, Indonesia
+Baubau, Sulawesi Tenggara, Indonesia
+Kendari
+Puuwatu, Kendari City, Sulawesi Tenggara
+Banggai, Sulawesi Tengah, Indonesia
+Buol, Sulawesi Tengah, Indonesia
+Donggala, Sulawesi Tengah, Indonesia
+Morowali, Sulawesi Tengah, Indonesia
+Poso (kota)
+Sigi, Sulawesi Tengah, Indonesia
+Gorontalo
+Lemito Utara, Gorontalo
+Pohuwato, Gorontalo
+Marisa, Gorontalo
+Tilamuta, Gorontalo
+Telaga, Gorontalo
+Limboto, Gorontalo
+Majene, Sulawesi Barat, Indonesia
+Mamasa, Sulawesi Barat, Indonesia
+Mamuju, Sulawesi Barat, Indonesia
+Polewali, Polewali Mandar, Sulawesi Barat, Indonesia
