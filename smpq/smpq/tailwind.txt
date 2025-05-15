@@ -1,0 +1,5 @@
+npx tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/output.css --watch
+npx @tailwindcss/cli -i ./public/assets/css/input.css -o ./public/assets/css/output.css --watch
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+.\tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/output.css --watch
