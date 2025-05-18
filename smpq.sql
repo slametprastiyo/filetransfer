@@ -11,7 +11,7 @@
  Target Server Version : 100432 (10.4.32-MariaDB)
  File Encoding         : 65001
 
- Date: 17/05/2025 13:56:35
+ Date: 18/05/2025 15:02:26
 */
 
 SET NAMES utf8mb4;
@@ -171,15 +171,16 @@ CREATE TABLE `pilketos_kandidat`  (
   `program` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `no_urut` int NULL DEFAULT NULL,
+  `total_vote` int NULL DEFAULT NULL,
   PRIMARY KEY (`nis`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pilketos_kandidat
 -- ----------------------------
-INSERT INTO `pilketos_kandidat` VALUES (111, 'kandidat 1', 'visi misi kandidat 1', 'program kandidat 1', 'kandidat1.png', 1);
-INSERT INTO `pilketos_kandidat` VALUES (222, 'kandidat 2', NULL, NULL, 'kandidat2.png', 2);
-INSERT INTO `pilketos_kandidat` VALUES (333, 'kandidat 3', NULL, NULL, 'kandidat3.png', 3);
+INSERT INTO `pilketos_kandidat` VALUES (111, 'kandidat 1', 'visi misi kandidat 1', 'program kandidat 1', 'kandidat1.png', 1, 12);
+INSERT INTO `pilketos_kandidat` VALUES (222, 'kandidat 2', NULL, NULL, 'kandidat2.png', 2, 4);
+INSERT INTO `pilketos_kandidat` VALUES (333, 'kandidat 3', NULL, NULL, 'kandidat3.png', 3, 4);
 
 -- ----------------------------
 -- Table structure for tags

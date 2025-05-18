@@ -18,18 +18,28 @@ class Pilketos extends CI_Controller
 		$nis = $this->input->get("nis");
 		$dpt = $this->pilketos_model->get_dpt($nis);
 		if($dpt){
-			echo true;
+			$data = [
+				'status' => true,
+				'dpt' => $dpt
+			];
+			echo json_encode($data);
 		}else{
-			echo false;
+			$data = [
+				'status' => false,
+				'dpt' => $dpt
+			];
+			echo json_encode($data);
 		}
 	}
 	public function vote(){
-		$dpt = $this->input->get("nis");
+		$dpt = $this->input->get("dpt");
 		$kandidat = $this->input->get("kandidat");
+		// echo $kandidat;die;
 		$check = $this->pilketos_model->get_dpt($dpt);
 		if($check){
-			$this->pilketos_model->vote($kandidat);
-			echo true;
+			// echo json_encode($check);die;
+			$vote = $this->pilketos_model->vote($kandidat);
+			echo $vote;
 		}else{
 			echo false;
 		}

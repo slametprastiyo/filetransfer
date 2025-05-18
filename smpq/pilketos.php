@@ -167,7 +167,7 @@
         <div id="kandidat-1" class="detail-kandidat w-full h-screen absolute bg-white overflow-y-scroll top-0 flex items-center justify-center scale-0">
             <div class="detail-card relative bg-blue-900 rounded-3xl mx-auto max-w-3xl h-fit relative flex py-10 pl-10">
                 <img src="<?= base_url(); ?>public/assets/images/detail-kandidat-corner.png" class="w-36 h-fit bottom-0 right-0 absolute" alt="">
-                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-id="kandidat-1">vote</div>
+                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-nis="111" data-name="kandidat 1">vote</div>
                 <div class="left inline-block w-2/5">
                     <img src="<?= base_url(); ?>public/assets/images/kandidat-return.svg" class="absolute kandidat-return w-12 aspect-square left-5 z-10 top-5 cursor-pointer">
                     <img src="<?= base_url(); ?>public/assets/images/detail-kandidat.png"
@@ -207,7 +207,7 @@
         <div id="kandidat-2" class="detail-kandidat w-full h-screen absolute bg-white overflow-y-scroll top-0 flex items-center justify-center scale-0">
             <div class="detail-card relative bg-blue-900 rounded-3xl mx-auto max-w-3xl h-fit relative flex py-10 pl-10">
                 <img src="<?= base_url(); ?>public/assets/images/detail-kandidat-corner.png" class="w-36 h-fit bottom-0 right-0 absolute" alt="">
-                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-id="kandidat-2">vote</div>
+                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-nis="222" data-name="kandidat 2">vote</div>
                 <div class="left inline-block w-2/5">
                     <img src="<?= base_url(); ?>public/assets/images/kandidat-return.svg" class="absolute kandidat-return w-12 aspect-square left-5 z-10 top-5 cursor-pointer">
                     <img src="<?= base_url(); ?>public/assets/images/detail-kandidat.png"
@@ -247,7 +247,7 @@
         <div id="kandidat-3" class="detail-kandidat w-full h-screen absolute bg-white overflow-y-scroll top-0 flex items-center justify-center scale-0">
             <div class="detail-card relative bg-blue-900 rounded-3xl mx-auto max-w-3xl h-fit relative flex py-10 pl-10">
                 <img src="<?= base_url(); ?>public/assets/images/detail-kandidat-corner.png" class="w-36 h-fit bottom-0 right-0 absolute" alt="">
-                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-id="kandidat-3">vote</div>
+                <div class="w-28 h-11 rounded-full bottom-0 right-0 absolute bg-orange-500 text-white uppercase flex justify-center items-center cursor-pointer hover:scale-105 animation ease-out duration-150 font-bold vote-btn" data-nis="333" data-name="kandidat 3">vote</div>
                 <div class="left inline-block w-2/5">
                     <img src="<?= base_url(); ?>public/assets/images/kandidat-return.svg" class="absolute kandidat-return w-12 aspect-square left-5 z-10 top-5 cursor-pointer">
                     <img src="<?= base_url(); ?>public/assets/images/detail-kandidat.png"
@@ -296,9 +296,15 @@
         </div>
     </section>
     <script>
+        // Add this script to the page that will be reloaded
+
+
+
         const body = document.querySelector('body');
         const kandidats = document.querySelectorAll('.kandidat img');
         const detailKandidats = document.querySelectorAll('.detail-kandidat');
+        const authSection = document.querySelector("#auth");
+        const input = authSection.querySelector("input");
         kandidats.forEach((kandidat, index) => {
             kandidat.addEventListener('click', () => {
                 const detailKandidat = document.querySelector(`#kandidat-${index + 1}`);
@@ -313,18 +319,19 @@
                 // console.log(detailKandidat);
 
                 voteBtn.addEventListener("click", () => {
-                    const kandidatSelected = voteBtn.dataset.id;
+                    const kandidatSelected = voteBtn.dataset.nis;
+                    const kandidatSelectedName = voteBtn.dataset.name;
                     // ambil data temp dpt dari localstorage, untuk memastikan pemilih sudah login
                     const dpt = localStorage.getItem("dpt");
                     // console.log(dpt);
                     if (dpt == null) {
                         //jika belum login
-                        const authSection = document.querySelector("#auth");
+                        
                         authSection.classList.remove("hidden");
                         const authSubmitBtn = authSection.querySelector("#auth-submit");
 
                         authSubmitBtn.addEventListener("click", () => {
-                            const input = authSection.querySelector("input");
+                            
                             if (input.value == "") {
                                 return;
                             }
@@ -339,8 +346,26 @@
                                 })
                                 .then(data => {
                                     //nis dpt sesuai
-                                    localStorage.setItem("dpt", data);
-                                    authSection.classList.add("hidden");
+                                    const result = JSON.parse(data);
+                                    // console.log(result.dpt);return;
+                                    
+                                    if(result.status == false){
+                                        Swal.fire({
+                                                title: "Data DPT tidak ditemukan",
+                                                text: "NIS salah",
+                                                icon: "warning"
+                                            })
+                                    }else{
+                                         Swal.fire({
+                                                title: result.dpt.nama,
+                                                text: result.dpt.kelas,
+                                                icon: "info",
+                                                timer: 2000,
+                                                showConfirmButton: false
+                                            })
+                                        localStorage.setItem("dpt", input.value);
+                                        authSection.classList.add("hidden");
+                                    }
                                 })
                                 .catch(error => {
                                     console.error('Error fetching data:', error);
@@ -350,7 +375,7 @@
                     } else {
                         Swal.fire({
                             title: 'Pilih',
-                            text: kandidatSelected,
+                            text: kandidatSelectedName,
                             icon: 'question',
                             showCancelButton: true,
                             confirmButtonColor: '#3085d6',
@@ -359,22 +384,51 @@
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 fetch(`http://localhost/smpq/pilketos/vote?dpt=${dpt}&kandidat=${kandidatSelected}`)
-                                .then(response => {
-                                    if (!response.ok) {
-                                        throw new Error(`HTTP error! status: ${response.status}`);
-                                    }
-                                    return response.text(); // Parse the response as JSON
-                                })
-                                .then(data => {
-                                    //nis dpt sesuai
-                                    console.log(data);
-                                    
-                                    // localStorage.setItem("dpt", data);
-                                    // authSection.classList.add("hidden");
-                                })
-                                .catch(error => {
-                                    console.error('Error fetching data:', error);
-                                });
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            throw new Error(`HTTP error! status: ${response.status}`);
+                                        }
+                                        return response.text(); // Parse the response as JSON
+                                    })
+                                    .then(data => {
+                                        //nis dpt sesuai
+                                        // console.log(data);
+                                        if (data == false) {
+                                            Swal.fire({
+                                                title: "Gagal",
+                                                text: "Coba Lagi",
+                                                icon: "warning"
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    localStorage.removeItem("dpt");
+                                                    input.value = "";
+                                                }
+                                            })
+                                        } else {
+                                            localStorage.removeItem("dpt");
+                                                    input.value = "";
+
+                                            Swal.fire({
+                                                title: "Berhasil",
+                                                text: "Anda telah memilih",
+                                                icon: "success"
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    detailKandidats.forEach((detail) => {
+                                                        detail.classList.add("scale-0");
+                                                    });
+                                                    body.style.overflow = "auto";
+                                                    window.scrollTo(0, 0);
+                                                }
+                                            })
+                                        }
+
+                                        // localStorage.setItem("dpt", data);
+                                        // authSection.classList.add("hidden");
+                                    })
+                                    .catch(error => {
+                                        console.error('Error fetching data:', error);
+                                    });
                             }
                         })
                     }
