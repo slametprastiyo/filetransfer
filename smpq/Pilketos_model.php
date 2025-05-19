@@ -15,8 +15,12 @@ class Pilketos_model extends CI_Model
         $query = $this->db->get('pilketos_dpt');
         return $query->row_array();
     }
-    public function vote($kandidat_nis)
+    public function vote($kandidat_nis, $dpt)
     {
+        $this->db->set('is_vote', 1, FALSE);
+        $this->db->where('nis', $dpt);
+        $this->db->update('pilketos_dpt');
+
         $this->db->set('total_vote', 'total_vote + 1', FALSE);
         $this->db->where('nis', $kandidat_nis);
         $this->db->update('pilketos_kandidat');

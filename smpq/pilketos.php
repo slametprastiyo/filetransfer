@@ -356,15 +356,27 @@
                                                 icon: "warning"
                                             })
                                     }else{
-                                         Swal.fire({
-                                                title: result.dpt.nama,
-                                                text: result.dpt.kelas,
-                                                icon: "info",
-                                                timer: 2000,
-                                                showConfirmButton: false
-                                            })
-                                        localStorage.setItem("dpt", input.value);
-                                        authSection.classList.add("hidden");
+                                        if(result.is_vote == 0){
+                                            Swal.fire({
+                                                   title: result.dpt.nama,
+                                                   text: result.dpt.kelas,
+                                                   icon: "info",
+                                                   timer: 2000,
+                                                   showConfirmButton: false
+                                               })
+                                           localStorage.setItem("dpt", input.value);
+                                           authSection.classList.add("hidden");
+                                        }else{
+                                            Swal.fire({
+                                                   title: "Gagal",
+                                                   text: "Anda sudah memilih",
+                                                   icon: "error",
+                                                   timer: 2000,
+                                                   showConfirmButton: false
+                                               })
+                                               localStorage.removeItem("dpt");
+                                           authSection.classList.add("hidden");
+                                        }
                                     }
                                 })
                                 .catch(error => {
@@ -392,8 +404,9 @@
                                     })
                                     .then(data => {
                                         //nis dpt sesuai
-                                        // console.log(data);
-                                        if (data == false) {
+                                        // console.log(data);return;
+                                        const resp = JSON.parse(data);
+                                        if (resp.status == "failed") {
                                             Swal.fire({
                                                 title: "Gagal",
                                                 text: "Coba Lagi",
@@ -405,22 +418,53 @@
                                                 }
                                             })
                                         } else {
-                                            localStorage.removeItem("dpt");
-                                                    input.value = "";
-
-                                            Swal.fire({
-                                                title: "Berhasil",
-                                                text: "Anda telah memilih",
-                                                icon: "success"
-                                            }).then((result) => {
-                                                if (result.isConfirmed) {
-                                                    detailKandidats.forEach((detail) => {
+                                            if(resp.status == "voted"){
+                                                Swal.fire({
+                                                    title: "Gagal",
+                                                    text: "Anda sudah memilih",
+                                                    icon: "warning"
+                                                }).then((result) => {
+                                                    if (result.isConfirmed) {
+                                                        localStorage.removeItem("dpt");
+                                                        input.value = "";
+                                                        detailKandidats.forEach((detail) => {
                                                         detail.classList.add("scale-0");
                                                     });
                                                     body.style.overflow = "auto";
                                                     window.scrollTo(0, 0);
-                                                }
-                                            })
+                                                    }
+                                                })
+                                            }else if(resp.status == 0){
+                                                Swal.fire({
+                                                    title: "Gagal",
+                                                    text: "Coba Lagi",
+                                                    icon: "warning"
+                                                }).then((result) => {
+                                                    if (result.isConfirmed) {
+                                                        localStorage.removeItem("dpt");
+                                                        input.value = "";
+                                                    }
+                                                })
+                                            }else{
+                                                localStorage.removeItem("dpt");
+                                                        input.value = "";
+    
+                                                Swal.fire({
+                                                    title: "Berhasil",
+                                                    text: "Anda telah memilih",
+                                                    icon: "success"
+                                                }).then((result) => {
+                                                    if (result.isConfirmed) {
+                                                        detailKandidats.forEach((detail) => {
+                                                            detail.classList.add("scale-0");
+                                                        });
+                                                        body.style.overflow = "auto";
+                                                        window.scrollTo(0, 0);
+                                                    }
+                                                })
+
+                                            }
+
                                         }
 
                                         // localStorage.setItem("dpt", data);
