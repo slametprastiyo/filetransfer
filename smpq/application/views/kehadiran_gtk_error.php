@@ -1,0 +1,1 @@
+terjadi kesalahan. silakan tutup browser. lalu ulangi scan QR code Anda. :D
